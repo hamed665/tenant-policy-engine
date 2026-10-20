@@ -1,11 +1,15 @@
 # Tenant Policy Engine
 
+### A Hamed Minaei engineering project
+
 ![Verify](https://github.com/hamed665/tenant-policy-engine/actions/workflows/verify.yml/badge.svg)
 
 A tenant-scoped authorization engine with resource ownership rules, immediate membership revocation and an atomic decision audit.
 
 **Status:** tested reference implementation with a reproducible synthetic CLI demo.
-Built as an independent engineering portfolio project by [Hamed Minaei](https://github.com/hamed665).
+**Project owner & maintainer:** [Hamed Minaei](https://github.com/hamed665)  
+**Engineering focus:** Multi-tenant authorization  
+**License:** MIT · Copyright © 2026 Hamed Minaei
 
 ## Features
 
@@ -78,6 +82,13 @@ This library does not authenticate callers. Derive subject identity from verifie
 ## Limitations
 
 The decision transaction does not include your application business write. If authorization and mutation must be atomic, integrate both in one transaction or use database-native row policies. No HTTP server, SSO, invite flow, per-field policy, policy language, immutable audit storage or distributed consistency is provided. This is a reference authorization component, not a complete SaaS control plane.
+
+## Maintainer
+
+[Hamed Minaei](https://github.com/hamed665) owns and maintains this portfolio repository.
+For implementation details, review the source, behavioral tests and merged pull requests.
+See [AUTHORS.md](AUTHORS.md) for development attribution and [ENGINEERING.md](ENGINEERING.md)
+for a concise technical walkthrough.
 
 ## Attribution and ownership
 
