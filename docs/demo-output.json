@@ -1,0 +1,68 @@
+{
+  "synthetic": true,
+  "decisions": [
+    {
+      "subject": "alice",
+      "action": "read",
+      "resource": "invoice-a",
+      "allowed": true,
+      "reason": "role and resource policy"
+    },
+    {
+      "subject": "bob",
+      "action": "delete",
+      "resource": "invoice-a",
+      "allowed": false,
+      "reason": "role and resource policy"
+    },
+    {
+      "subject": "alice",
+      "action": "read",
+      "resource": "invoice-b",
+      "allowed": false,
+      "reason": "resource unavailable"
+    }
+  ],
+  "after_revocation": {
+    "allowed": false,
+    "reason": "membership required"
+  },
+  "audit": [
+    {
+      "seq": 1,
+      "tenant": "demo-a",
+      "subject": "alice",
+      "action": "read",
+      "resource": "invoice-a",
+      "allowed": 1,
+      "reason": "role and resource policy"
+    },
+    {
+      "seq": 2,
+      "tenant": "demo-a",
+      "subject": "bob",
+      "action": "delete",
+      "resource": "invoice-a",
+      "allowed": 0,
+      "reason": "role and resource policy"
+    },
+    {
+      "seq": 3,
+      "tenant": "demo-a",
+      "subject": "alice",
+      "action": "read",
+      "resource": "invoice-b",
+      "allowed": 0,
+      "reason": "resource unavailable"
+    },
+    {
+      "seq": 4,
+      "tenant": "demo-a",
+      "subject": "bob",
+      "action": "read",
+      "resource": "invoice-a",
+      "allowed": 0,
+      "reason": "membership required"
+    }
+  ]
+}
